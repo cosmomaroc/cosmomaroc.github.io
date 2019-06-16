@@ -23561,10 +23561,9 @@ html .page .offset-top-115 {
   border-radius: 50%;
   transition: .3s all ease;
 }
-
-.post-destination-img-wrap:before {
-  background: linear-gradient(180deg, rgba(130, 119, 199, 0.8) 20%, rgba(241, 110, 166, 0.8) 80%);
-}
+/*.post-destination-img-wrap:before {
+ // background: linear-gradient(180deg, rgba(130, 119, 199, 0.8) 20%, rgba(241, 110, 166, 0.8) 80%);
+}*/
 
 .post-destination-caption {
   position: absolute;
@@ -34224,7 +34223,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .rd-navbar-brand .brand-name {
-  color: #333;
+  color: #fff;
   font-size: 25px;
   line-height: 40px;
   font-weight: 700;
@@ -39813,7 +39812,10 @@ yx-axis
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
-  transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out;
 }
 
 ._mCS_1 .mCSB_scrollTools {
