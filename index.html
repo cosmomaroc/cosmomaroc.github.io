@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<html >
   <head>
     <!-- Site Title-->
     <title>cosmomaroc</title>
+     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,52 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,400i%7CPlayfair+Display:400,700">
     <link rel="stylesheet" href="css/style.css">
+
+        <script >
+
+  let langs = ['en', 'fr'];
+let lang = 'fr';
+setLangStyles(lang);
+
+function setStyles(styles) {
+  var elementId = '__lang_styles';
+  var element = document.getElementById(elementId);
+  if (element) {
+    element.remove();
+  }
+
+  let style = document.createElement('style');
+  style.id = elementId;
+  style.type = 'text/css';
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = styles;
+  } else {
+    style.appendChild(document.createTextNode(styles));
+  }
+  document.getElementsByTagName('head')[0].appendChild(style);
+}
+
+function setLang(lang) {
+  setLangStyles(lang);
+}
+
+function setLangStyles(lang) {
+  let styles = langs
+    .filter(function (l) {
+      return l != lang;
+    })
+    .map(function (l) {
+      return ':lang('+ l +') { display: none; }';
+    })
+    .join(' ');
+
+  setStyles(styles);
+}
+  
+
+
+    </script>
 		<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
@@ -30,10 +77,12 @@
                 <div class="rd-navbar-brand veil reveal-lg-inline-block"><a href="index.html" class="brand-name" style="color: white;">Cosmomaroc</a></div>
                 <!-- List Inline-->
                 <ul class="list-inline list-inline-0 list-primary veil reveal-lg-inline-block">
-                  <li class="text-center"><a href="#" class="icon icon-xxs fa fa-facebook text-white"></a></li>
-                  <li class="text-center"><a href="#" class="icon icon-xxs fa fa-google-plus text-white"></a></li>
-                  <li class="text-center"><a href="#" class="icon icon-xxs fa fa-linkedin text-white"></a></li>
-                  <li class="text-center"><a href="#" class="icon icon-xxs fa fa-twitter text-white"></a></li>
+                     <li class="text-center"><a href="https://www.facebook.com/cosmomaroc/" class="icon icon-xxs fa fa-facebook text-white"></a></li>
+                   <li class="text-center"><a href="#" hreflang="en" onclick="setLang('en'); return false"><img src="images/en.png" width="45"height="27" alt=""></a></li>
+                   <li class="text-center"><a href="#" hreflang="fr" onclick="setLang('fr'); return false"><img src="images/fr.png" width="45"height="27" alt=""></a></li>
+               
+                 
+                  
                 </ul>
               </div>
               <!-- RD Navbar Panel-->
@@ -49,34 +98,48 @@
                 <div class="rd-navbar-nav-wrap reveal-md-inline-block">
                   <ul class="rd-navbar-nav">
                     <!-- RD Navbar Nav-->
-                    <li class="active"><a href="index.html">Accueil</a></li>
-                    <li><a href="#">Produits</a>
+                    <li class="active" lang="fr"><a href="index.html" >Accueil</a></li>
+                    <li class="active" lang="en"><a href="index.html" >home</a></li>
+                    <li lang="fr"><a href="#">Produits</a>
+
                           <ul class="rd-navbar-dropdown">
                             <li><a href="vernis_a_ongles_foxy_fox.html">Vernis à ongles Foxy-Fox</a></li>
                             <li><a href="vernis_a_ongles_nancy.html">Vernis à ongles Nancy</a></li>
                             <li><a href="mascara.html">Mascara</a></li>
                             <li><a href="glosses_a_levres_foxy_fox.html">Glosses à Lèvres Foxy-Fox</a></li>
                             <li><a href="fond_de_teint_compact.html">Fond de teint compact</a></li>
-                            <li><a href="fond_de_tein_liquide.html">Fond de tein liquide</a></li>
+                            <li><a href="fond_de_tein_liquide.html">Fond de teit liquide</a></li>
                             <li><a href="Poudre_compacte.html">Poudre compacte</a></li>
                             <li><a href="Fard_a_joues.html">Fard à joues</a></li>
                             <li><a href="Rouge_a_lèvres.html">Rouge à lèvres</a></li>
                             <li><a href="Eyeliner.html">Eyeliner</a></li>
                           </ul>
                     </li>
-                    
+                    <li lang="en"><a href="#">products</a>
 
-                    <li><a href="contacts.html">Contact</a></li>
+                          <ul class="rd-navbar-dropdown">
+                            <li><a href="vernis_a_ongles_foxy_fox.html">Nail polish Foxy-Fox</a></li>
+                            <li><a href="vernis_a_ongles_nancy.html">Nail polish Nancy</a></li>
+                            <li><a href="mascara.html">Mascara</a></li>
+                            <li><a href="glosses_a_levres_foxy_fox.html">Lip Glosses Foxy-Fox</a></li>
+                            <li><a href="fond_de_teint_compact.html">Compact foundation</a></li>
+                            <li><a href="fond_de_tein_liquide.html">Liquid foundation</a></li>
+                            <li><a href="Poudre_compacte.html">Compact powder</a></li>
+                            <li><a href="Fard_a_joues.html">blusher</a></li>
+                            <li><a href="Rouge_a_lèvres.html">Lipstick</a></li>
+                            <li><a href="Eyeliner.html">Eyeliner</a></li>
+                          </ul>
+                    </li>
+
+                    <li><a href="contacts.html" >Contact</a></li>
                      
                         
                   </ul>
                 </div>
                 <div class="rd-navbar-collapse-wrap reveal-md-inline-block">
                   <ul class="list-inline list-inline-0 list-primary">
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-facebook text-white"></a></li>
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-google-plus text-white"></a></li>
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-linkedin text-white"></a></li>
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-twitter text-white"></a></li>
+                    <li class="text-center"><a href="https://www.facebook.com/cosmomaroc/" class="icon icon-xxs fa fa-facebook text-white"></a></li>
+                   
                   </ul>
                 </div>
               </div>
@@ -95,12 +158,23 @@
               <div class="range range-xs-center text-center">
                 <div class="cell-sm-10 cell-lg-12">
                   <div>
-                    <div class="text-extra-big font-accent text-bold text-white text-spacing-0">Leader Marocain des produits cosmétiques</div>
+                    <div class="text-extra-big font-accent text-bold text-white text-spacing-0" lang='fr'>Leader Marocain des produits cosmétiques</div>
+                       <div class="text-extra-big font-accent text-bold text-white text-spacing-0" lang='en'>Moroccan leader for beauty products</div>
+
                   </div>
                   <div class="offset-top-20 offset-lg-top-0">
                     <h5 class="text-white text-lowercase text-spacing-0"></h5>
                   </div>
-                  <div style="max-width:570px;" class="group group-sm offset-top-25 reveal-inline-block"><a href="contacts.html" style="min-width:205px;" class="btn btn-primary">Contactez Nous</a></div>
+               
+
+
+                  <div 
+                   class="group group-sm offset-top-25 "  lang="fr"><a href="contacts.html" style="min-width:205px;" class="btn btn-primary" lang='fr'>Contactez Nous</a></div>
+
+                  <div 
+                   class="group group-sm offset-top-25 "  lang="en"><a href="contacts.html" style="min-width:205px;" class="btn btn-primary" lang='en'>Contact us</a></div>
+
+                  
                 </div>
               </div>
             </div>
@@ -113,21 +187,28 @@
         <section class="section-75 section-md-top-95 section-md-bottom-110">
           <div class="shell">
             <div>
-              <h2 class="text-regular text-spacing-0">Goûts différents, Qualité sûre</h2>
-            </div>
+              <h2 class="text-regular text-spacing-0" lang='fr'>Goûts différents, Qualité sûre</h2>
+                <h2 class="text-regular text-spacing-0" lang='en'>Different tastes, safe quality</h2>
+
+            </div> 
             <div class="offset-top-10"></div>
             <div class="range range-xs-center offset-top-30 offset-md-top-53 text-left">
               <div class="cell-sm-6">
-                <p class="text-spacing-0 small">Depuis sa fondation en 2006, Cosmomaroc a toujours été fière de répondre à toute exigence technique de son industrie
+                <p class="text-spacing-0 small" lang="fr">Depuis sa fondation en 2006, Cosmomaroc a toujours été fière de répondre à toute exigence technique de son industrie
                 pour offrir à ses clients un maquillage purement professionnel.<br/>                
                 Nos objectifs sont l'innovation, l'excellence, la création de produits cosmétiques concurrentiels, efficaces et sains
                 afin de répondre aux besoins variables de notre société.
                 </p>
+                <p class="text-spacing-0 small" lang="en">Since its founding in 2006, Cosmomaroc has always been proud to meet any technical requirement of its industry to offer its customers a purely professional <br/>
+                Our goals are innovation, excellence, creating competitive, effective and healthy cosmetic products to meet the varying needs of our society.
+                </p>
+               
               </div>
               <div class="cell-sm-6 offset-top-20 offset-sm-top-0">
-                <p class="text-spacing-0 small">Le travail rigoureux de nos équipes que ce soit dans nos départements techniques ou marketing, a réussi à unifier
+                <p class="text-spacing-0 small" lang="fr">Le travail rigoureux de nos équipes que ce soit dans nos départements techniques ou marketing, a réussi à unifier
                 créativité et sécurité, offrant ainsi à nos clients tout d'abord un produit de soins complet, puis des emballages et des
                 tendances créant une valeur ajoutée clé en nous permettons de nous différencier dans le marché.</p>
+                <p class="text-spacing-0 small" lang="en">The rigorous work of our teams, whether in our technical or marketing departments, has succeeded in unifying creativity and safety, thus offering our customers first of all a complete care product, then packaging and trends creating a key added value. by allowing us to differentiate ourselves in the market.</p>
               </div>
             </div>
             <div class="range range-condensed offset-top-25 offset-md-top-40">
@@ -151,7 +232,8 @@
                       height="200" alt=""></div>
                   <div class="post-inspiration-body">
                     <div class="offset-top-20">
-                      <h5 class="text-spacing-0">Fond de teint</h5>
+                      <h5 class="text-spacing-0" lang="fr">Fond de teint</h5>
+                       <h5 class="text-spacing-0" lang="en">face powder</h5>
                     </div>
                   </div>
                 </div>
@@ -163,7 +245,8 @@
                       height="427" alt=""></div>
                   <div class="post-inspiration-body">
                     <div class="offset-top-20">
-                      <h5 class="text-spacing-0">Poudre compacte</h5>
+                      <h5 class="text-spacing-0" lang="fr">Poudre compacte</h5>
+                         <h5 class="text-spacing-0" lang="en">Compact powder</h5>
                     </div>
                   </div>
                 </div>
@@ -175,17 +258,21 @@
                       height="427" alt=""></div>
                   <div class="post-inspiration-body">
                     <div class="offset-top-20">
-                      <h5 class="text-spacing-0">Fard à joues</h5>
+                      <h5 class="text-spacing-0" lang="fr">Fard à joues</h5>
+                      <h5 class="text-spacing-0" lang="en">Blusher</h5>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="offset-top-70 offset-md-top-95">
-              <h2 class="text-spacing-0">Nouveautés</h2>
+              <h2 class="text-spacing-0" lang="fr">Nouveautés</h2>
+              <h2 class="text-spacing-0" lang="en">New</h2>
               <div class="range range-xs-center offset-top-44">
                 <div class="cell-sm-10 cell-lg-12">
-                  <p class="text-spacing-0">Nous continuons à innover pour servir tous vos beasoins.</p>
+                  <p class="text-spacing-0" lang="fr">Nous continuons à innover pour servir tous vos beasoins.</p>
+                  <p class="text-spacing-0" lang="en">We continue to innovate to serve all your needs.</p>
+                  
                 </div>
               </div>
               <div class="range range-xs-center offset-top-60">
@@ -290,21 +377,27 @@
                 <div class="range range-xs-center text-center">
                   <div class="cell-sm-12">
                     <div class="offset-top-15 offset-md-top-30">
-                      <h1 class="text-spacing-0 text-regular">Des produits à la base de matières premières saines</h1>
+                      <h1 class="text-spacing-0 text-regular" lang="fr">Des produits à la base de matières premières saines</h1>
+                      <h1 class="text-spacing-0 text-regular" lang="en">Products based on healthy raw materials</h1>
                       <div class="offset-top-20 offset-md-top-44">
                         <div class="range range-xs-center">
                           <div class="cell-sm-10">
-                            <p class="text-transform-none text-regular h5 cell-md-10 text-spacing-0">Chez Cosmomaroc, nous nous intéressons à vous fournir des produits de haute qualité, à un prix abordable, mais surtout
+                            <p class="text-transform-none text-regular h5 cell-md-10 text-spacing-0" lang="fr">Chez Cosmomaroc, nous nous intéressons à vous fournir des produits de haute qualité, à un prix abordable, mais surtout
                             en respectant les normes de santé.<br/>
                             Nous nous engageons à fournir des produits sans matières toxiques, en l'occurrence, nous n'utilisons PAS les matières
                             suivantes: Le Phatalate de dibutyle, le Toluène, le Formaldéhyde, le Camphre.<br />
                             Nos produits ainsi ne laissent aucune trace après usage et nettoyage. À vous d'essayer!</p>
+                            <p class="text-transform-none text-regular h5 cell-md-10 text-spacing-0" lang="en">at Cosmomaroc, we are interested in providing you with high quality products, at an affordable price, but above all by respecting health standards.
+                            We are committed to providing products without toxic materials, in this case, we do NOT use the following materials: Dibutyl Phatalate, Toluene, Formaldehyde, Camphor.
+                            Our products thus leave no trace after use and cleaning. It's up to you to try!</p>
                           </div>
                         </div>
                       </div>
-                      <div style="max-width:400px;" class="offset-top-30 offset-md-top-60 reveal-inline-block"><a
-                          href="contacts.html" style="min-width:240px;" class="btn btn-primary">contactez nous</a>
-                      </div>
+                      <div 
+                   class="group group-sm offset-top-25 "  lang="fr"><a href="contacts.html" style="min-width:205px;" class="btn btn-primary" lang='fr'>Contactez Nous</a></div>
+
+                  <div 
+                   class="group group-sm offset-top-25 "  lang="en"><a href="contacts.html" style="min-width:205px;" class="btn btn-primary" lang='en'>Contact us</a></div>
                     </div>
                   </div>
                 </div>
@@ -320,7 +413,8 @@
             <div class="cell-sm-5 cell-md-4">
               <div class="inset-lg-right-120">
                 <div>
-                  <p class="text-uppercase text-bold font-accent text-spacing-0 text-mine-shaft">Articles utiles</p>
+                  <p class="text-uppercase text-bold font-accent text-spacing-0 text-mine-shaft" lang="fr">Articles utiles</p>
+                   <p class="text-uppercase text-bold font-accent text-spacing-0 text-mine-shaft" lang="en">useful articles</p>
                 </div>
                 <div class="offset-top-15 offset-sm-top-25 text-left">
                   <!-- Unit-->
@@ -381,7 +475,8 @@
                 <div class="range range-xs-center">
                   <div class="cell-sm-5 cell-md-12">
                     <div>
-                      <p class="text-uppercase text-bold font-accent text-spacing-0 text-mine-shaft">adresse</p>
+                      <p class="text-uppercase text-bold font-accent text-spacing-0 text-mine-shaft" lang="fr">adresse</p>
+                       <p class="text-uppercase text-bold font-accent text-spacing-0 text-mine-shaft" lang="en">adress</p>
                     </div>
                     <div class="offset-top-15 offset-sm-top-25">
                       <!-- Contact Info-->
@@ -411,7 +506,10 @@
           </div>
           <div class="offset-top-50">
             <p class="text-extra-small text-silver-chalice"><span class="font-accent footer-brand text-bold">Cosmomaroc</span> &#169; <span id="copyright-year"></span> <a href="privacy.html"
-                class="text-silver-chalice">Privacy Policy</a></p>
+                class="text-silver-chalice" lang="fr">Politique de confidentialité</a><a href="privacy.html"
+                class="text-silver-chalice" lang="en">Privacy Policy</a></p>
+
+                
             <!-- {%FOOTER_LINK}-->
           </div>
         </div>
