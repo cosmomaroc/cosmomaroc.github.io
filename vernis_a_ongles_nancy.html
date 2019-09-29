@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<html >
   <head>
     <!-- Site Title-->
-    <title>vernis à ongles nancy</title>
+   
+     <title lang="fr">vernis à ongles nancy</title>
+    <title lang="en">Nail polish nancy</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +17,51 @@
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
 		<![endif]-->
+     <script >
+
+  let langs = ['en', 'fr'];
+let lang = 'fr';
+setLangStyles(lang);
+
+function setStyles(styles) {
+  var elementId = '__lang_styles';
+  var element = document.getElementById(elementId);
+  if (element) {
+    element.remove();
+  }
+
+  let style = document.createElement('style');
+  style.id = elementId;
+  style.type = 'text/css';
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = styles;
+  } else {
+    style.appendChild(document.createTextNode(styles));
+  }
+  document.getElementsByTagName('head')[0].appendChild(style);
+}
+
+function setLang(lang) {
+  setLangStyles(lang);
+}
+
+function setLangStyles(lang) {
+  let styles = langs
+    .filter(function (l) {
+      return l != lang;
+    })
+    .map(function (l) {
+      return ':lang('+ l +') { display: none; }';
+    })
+    .join(' ');
+
+  setStyles(styles);
+}
+  
+
+
+    </script>
   </head>
   <body>
     <!-- Page-->
@@ -39,25 +86,40 @@
                 <div class="rd-navbar-nav-wrap reveal-md-inline-block">
                   <ul class="rd-navbar-nav">
                     <!-- RD Navbar Nav-->
-                    <li><a href="index.html">Accueil</a></li>
-                    <li class="active"><a href="#">Produits</a>
+                    <li class="active" lang="fr"><a href="index.html" >Accueil</a></li>
+                    <li class="active" lang="en"><a href="index.html" >home</a></li>
+                    <li lang="fr"><a href="#">Produits</a>
+
                           <ul class="rd-navbar-dropdown">
                             <li><a href="vernis_a_ongles_foxy_fox.html">Vernis à ongles Foxy-Fox</a></li>
                             <li><a href="vernis_a_ongles_nancy.html">Vernis à ongles Nancy</a></li>
                             <li><a href="mascara.html">Mascara</a></li>
-                           <li><a href="glosses_a_levres_foxy_fox.html">Glosses à Lèvres Foxy-Fox</a></li>
+                            <li><a href="glosses_a_levres_foxy_fox.html">Glosses à Lèvres Foxy-Fox</a></li>
                             <li><a href="fond_de_teint_compact.html">Fond de teint compact</a></li>
-                            <li><a href="fond_de_tein_liquide.html">Fond de tein liquide</a></li>
+                            <li><a href="fond_de_tein_liquide.html">Fond de teit liquide</a></li>
                             <li><a href="Poudre_compacte.html">Poudre compacte</a></li>
                             <li><a href="Fard_a_joues.html">Fard à joues</a></li>
                             <li><a href="Rouge_a_lèvres.html">Rouge à lèvres</a></li>
-                              <li><a href="Eyeliner.html">Eyeliner</a></li>
+                            <li><a href="Eyeliner.html">Eyeliner</a></li>
                           </ul>
                     </li>
-                    
+                    <li lang="en"><a href="#">products</a>
 
-                    <li><a href="contacts.html">Contact</a></li>
-                     
+                          <ul class="rd-navbar-dropdown">
+                            <li><a href="vernis_a_ongles_foxy_fox.html">Nail polish Foxy-Fox</a></li>
+                            <li><a href="vernis_a_ongles_nancy.html">Nail polish Nancy</a></li>
+                            <li><a href="mascara.html">Mascara</a></li>
+                            <li><a href="glosses_a_levres_foxy_fox.html">Lip Glosses Foxy-Fox</a></li>
+                            <li><a href="fond_de_teint_compact.html">Compact foundation</a></li>
+                            <li><a href="fond_de_tein_liquide.html">Liquid foundation</a></li>
+                            <li><a href="Poudre_compacte.html">Compact powder</a></li>
+                            <li><a href="Fard_a_joues.html">blusher</a></li>
+                            <li><a href="Rouge_a_lèvres.html">Lipstick</a></li>
+                            <li><a href="Eyeliner.html">Eyeliner</a></li>
+                          </ul>
+                    </li>
+
+                    <li><a href="contacts.html" >Contact</a></li>
                      
                         
                   </ul>
@@ -65,9 +127,8 @@
                 <div class="rd-navbar-collapse-wrap reveal-md-inline-block">
                   <ul class="list-inline list-inline-0 list-primary">
                     <li class="text-center"><a href="#" class="icon icon-xxs fa fa-facebook text-white"></a></li>
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-google-plus text-white"></a></li>
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-linkedin text-white"></a></li>
-                    <li class="text-center"><a href="#" class="icon icon-xxs fa fa-twitter text-white"></a></li>
+                       <li class="text-center"><a href="#" hreflang="en" onclick="setLang('en'); return false"><img src="images/en.jpg" width="35"height="22" alt=""></a></li>
+                   <li class="text-center"><a href="#" hreflang="fr" onclick="setLang('fr'); return false"><img src="images/fr.png" width="35"height="22" alt=""></a></li>
                   </ul>
                 </div>
               </div>
@@ -80,7 +141,8 @@
           <div data-speed="0" data-type="html" class="rd-parallax-layer">
             <div class="shell section-top-34 section-bottom-34 section-md-top-175 section-md-bottom-75 section-lg-top-158 section-lg-bottom-125 section-md-tablet-75">
               <div class="veil reveal-md-block">
-                <div class="text-extra-big font-accent text-bold text-spacing-inverse-50">vernis à ongles nancy</div>
+                <div class="text-extra-big font-accent text-bold text-spacing-inverse-50" lang="fr">vernis à ongles nancy</div>
+                 <div class="text-extra-big font-accent text-bold text-spacing-inverse-50" lang="en">nancy nail polish</div>
               </div>
             </div>
           </div>
@@ -95,7 +157,8 @@
               
             </div>
             <div class="offset-top-40">
-              <h4 class="text-spacing-inverse-50">Parfait vernis à ongles pour les manucures avec des particules pailletées pour obtenir de beaux effets, et un après-usage en toute sécurité.</h4>
+              <h4 class="text-spacing-inverse-50" lang="fr">Parfait vernis à ongles pour les manucures avec des particules pailletées pour obtenir de beaux effets, et un après-usage en toute sécurité.</h4>
+              <h4 class="text-spacing-inverse-50" lang="en">Perfect nail polish for manicures with glitter particles to achieve beautiful effects, and a safe after-use.</h4>
               <div class="range range-xs-center offset-top-44 offset-md-top-53 text-sm-left">
                 
                
@@ -199,6 +262,51 @@
                   </div>
                 </div>
               </div>
+              <table class="table">
+  <thead>
+    <td colspan="5"><h5>Pink Colors</h5></td>
+    <tr>
+      <th scope="col">color</th>
+      <th scope="col">Ref</th>
+    </tr>
+  </thead>
+  <tbody> 
+    
+    <tr><th style="background-color: #FFC0CB"></th><td scope="row">#FFC0CB</td></tr>
+    <tr><th style="background-color: #FFB6C1"></th><td scope="row">#FFB6C1</td></tr>
+    <tr><th style="background-color: #FF69B4"></th><td scope="row">#FF69B4</td></tr>
+    <tr><th style="background-color: #FF1493"></th><td scope="row">#FF1493</td></tr>
+    <tr><th style="background-color: #DB7093"></th><td scope="row">#DB7093</td></tr>
+     <tr><th style="background-color: #C71585"></th><td scope="row">#C71585</td></tr>
+  </tbody>
+    <thead>
+       <td colspan="5"><h5>Purple Colors</h5></td>
+    <tr>
+      <th scope="col">color</th>
+      <th scope="col">Ref</th>
+    </tr>
+  </thead>
+  <tbody> 
+   
+    <tr><th style="background-color: #E6E6FA"></th><td scope="row">#E6E6FA</td></tr>
+    <tr><th style="background-color: #D8BFD8"></th><td scope="row">#D8BFD8</td></tr>
+    <tr><th style="background-color: #DDA0DD"></th><td scope="row">#DDA0DD</td></tr>
+    <tr><th style="background-color: #DA70D6"></th><td scope="row">#DA70D6</td></tr>
+    <tr><th style="background-color: #EE82EE"></th><td scope="row">#EE82EE</td></tr>
+    <tr><th style="background-color: #FF00FF"></th><td scope="row">#FF00FF</td></tr>
+    <tr><th style="background-color: #BA55D3"></th><td scope="row">#BA55D3</td></tr>
+    <tr><th style="background-color: #9932CC"></th><td scope="row">#9932CC</td></tr>
+    <tr><th style="background-color: #8A2BE2"></th><td scope="row">#8A2BE2</td></tr>
+    <tr><th style="background-color: #8B008B"></th><td scope="row">#8B008B</td></tr>
+    <tr><th style="background-color: #800080"></th><td scope="row">#800080</td></tr>
+    <tr><th style="background-color: #9370DB"></th><td scope="row">#9370DB</td></tr>
+    <tr><th style="background-color: #7B68EE"></th><td scope="row">#7B68EE</td></tr>
+    <tr><th style="background-color: #6A5ACD"></th><td scope="row">#6A5ACD</td></tr>
+    <tr><th style="background-color: #483D8B"></th><td scope="row">#483D8B</td></tr>
+    <tr><th style="background-color: #663399"></th><td scope="row">#663399</td></tr>
+    <tr><th style="background-color: #4B0082"></th><td scope="row">#4B0082</td></tr>
+  </tbody>
+</table>
             </div>
           </div>
         </section>
@@ -211,7 +319,9 @@
             <div class="hr bg-gray-lighter"></div>
           </div>
           <div class="offset-top-50">
-            <p class="text-extra-small text-silver-chalice"><span class="font-accent footer-brand text-bold">cosmomaroc</span> &#169; <span id="copyright-year"></span> <a href="privacy.html" class="text-silver-chalice">Privacy Policy</a></p>
+          <p class="text-extra-small text-silver-chalice"><span class="font-accent footer-brand text-bold">Cosmomaroc</span> &#169; <span id="copyright-year"></span> <a href="privacy.html"
+                class="text-silver-chalice" lang="fr">Confidentialité</a><a href="privacy.html"
+                class="text-silver-chalice" lang="en">Privacy Policy</a></p>
             <!-- {%FOOTER_LINK}-->
           </div>
         </div>

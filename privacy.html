@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<html >
   <head>
     <!-- Site Title-->
-    <title>Privacy Policy</title>
+    
+    <title lang="fr">Politique de confidentialité</title>
+    <title lang="en">Privacy Policy</title>
+    <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +18,51 @@
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
 		<![endif]-->
+      <script >
+
+  let langs = ['en', 'fr'];
+let lang = 'fr';
+setLangStyles(lang);
+
+function setStyles(styles) {
+  var elementId = '__lang_styles';
+  var element = document.getElementById(elementId);
+  if (element) {
+    element.remove();
+  }
+
+  let style = document.createElement('style');
+  style.id = elementId;
+  style.type = 'text/css';
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = styles;
+  } else {
+    style.appendChild(document.createTextNode(styles));
+  }
+  document.getElementsByTagName('head')[0].appendChild(style);
+}
+
+function setLang(lang) {
+  setLangStyles(lang);
+}
+
+function setLangStyles(lang) {
+  let styles = langs
+    .filter(function (l) {
+      return l != lang;
+    })
+    .map(function (l) {
+      return ':lang('+ l +') { display: none; }';
+    })
+    .join(' ');
+
+  setStyles(styles);
+}
+  
+
+
+    </script>
   </head>
   <body>
     <!-- Page-->
@@ -30,124 +78,59 @@
                 <!-- RD Navbar Toggle-->
                 <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand veil reveal-md-block"><a href="index.html" class="brand-name"><img style='margin-top: -10px;' width='164' height='29' src='images/logo-164x29.png' alt=''/></a></div>
-                <div class="rd-navbar-brand veil-md veil-tablet-lg reveal-tablet-md-inline-block"><a href="index.html" class="brand-name"><img style='margin-top: -7px;' width='128' height='24' src='images/logo-128x24.png' alt=''/></a></div>
+                <div class="rd-navbar-brand veil reveal-lg-inline-block"><a href="index.html" class="brand-name" style="color: white;">Cosmomaroc</a></div>
+                <div class="rd-navbar-brand veil-md veil-tablet-lg reveal-tablet-md-inline-block"><a href="index.html" class="brand-name" style="color: black;">Cosmomaroc</a></div>
                 <!-- RD Navbar Toggle-->
                 <button data-rd-navbar-toggle=".rd-navbar-collapse-wrap" class="rd-navbar-collapse"><span></span></button>
               </div>
               <div class="rd-navbar-right-side">
                 <div class="rd-navbar-nav-wrap reveal-md-inline-block">
-                  <ul class="rd-navbar-nav">
+                <ul class="rd-navbar-nav">
                     <!-- RD Navbar Nav-->
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="about.html">About</a>
-                      <ul class="rd-navbar-dropdown">
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="history.html">History</a></li>
-                        <li><a href="single-member.html">About me</a></li>
-                        <li><a href="clients.html">Clients</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="services.html">Services</a>
-                      <ul class="rd-navbar-dropdown">
-                        <li><a href="services-1.html">Services</a></li>
-                        <li><a href="single-service.html">Single service</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="shop.html">Shop</a>
-                      <ul class="rd-navbar-dropdown">
-                        <li><a href="shop-grid.html">grid view</a></li>
-                        <li><a href="shop.html">list view</a></li>
-                        <li><a href="cart.html">cart page</a></li>
-                        <li><a href="featured-product.html">Featured Products</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="blog-classic-left-sidebar.html">News</a>
-                      <ul class="rd-navbar-dropdown">
-                        <li><a href="blog-classic-left-sidebar.html">classic blog</a>
+                    <li class="active" lang="fr"><a href="index.html" >Accueil</a></li>
+                    <li class="active" lang="en"><a href="index.html" >home</a></li>
+                    <li lang="fr"><a href="#">Produits</a>
+
                           <ul class="rd-navbar-dropdown">
-                            <li><a href="blog-classic-left-sidebar.html">left sidebar</a></li>
-                            <li><a href="blog-classic-right-sidebar.html">right sidebar</a></li>
-                            <li><a href="blog-classic-both-sidebar.html">both sidebars</a></li>
+                            <li><a href="vernis_a_ongles_foxy_fox.html">Vernis à ongles Foxy-Fox</a></li>
+                            <li><a href="vernis_a_ongles_nancy.html">Vernis à ongles Nancy</a></li>
+                            <li><a href="mascara.html">Mascara</a></li>
+                            <li><a href="glosses_a_levres_foxy_fox.html">Glosses à Lèvres Foxy-Fox</a></li>
+                            <li><a href="fond_de_teint_compact.html">Fond de teint compact</a></li>
+                            <li><a href="fond_de_tein_liquide.html">Fond de teit liquide</a></li>
+                            <li><a href="Poudre_compacte.html">Poudre compacte</a></li>
+                            <li><a href="Fard_a_joues.html">Fard à joues</a></li>
+                            <li><a href="Rouge_a_lèvres.html">Rouge à lèvres</a></li>
+                            <li><a href="Eyeliner.html">Eyeliner</a></li>
                           </ul>
-                        </li>
-                        <li><a href="blog-grid-3-columns.html">grid blog</a>
-                          <ul class="rd-navbar-dropdown">
-                            <li><a href="blog-grid-1-column.html">1 column</a></li>
-                            <li><a href="blog-grid-2-columns.html">2 columns</a></li>
-                            <li><a href="blog-grid-3-columns.html">3 columns</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="blog-masonry-3-columns.html">masonry blog</a>
-                          <ul class="rd-navbar-dropdown">
-                            <li><a href="blog-masonry-1-column.html">1 column</a></li>
-                            <li><a href="blog-masonry-2-columns.html">2 columns</a></li>
-                            <li><a href="blog-masonry-3-columns.html">3 columns</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="blog-modern-left-side.html">modern blog</a>
-                          <ul class="rd-navbar-dropdown">
-                            <li><a href="blog-modern-left-side.html">left side</a></li>
-                            <li><a href="blog-modern-right-side.html">right side</a></li>
-                            <li><a href="blog-modern-left-sidebar.html">left sidebar</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="blog-single-post.html">Single Post</a></li>
-                      </ul>
                     </li>
-                    <li><a href="contacts.html">Contacts</a></li>
-                    <li class="active"><a href="#">Pages</a>
-                      <div class="rd-navbar-megamenu">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <p class="text-extra-small text-uppercase text-bold font-accent text-primary veil reveal-md-block veil-tablet-md">elements</p>
-                            <ul>
-                              <li><a href="typography.html">Typography</a></li>
-                              <li><a href="tabs-accordions.html">Tabs & Accordions</a></li>
-                              <li><a href="progress-bars.html">Progress bars</a></li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li><a href="forms.html">Forms</a></li>
-                              <li><a href="buttons.html">Buttons</a></li>
-                              <li><a href="grid.html">Grid</a></li>
-                            </ul>
-                          </div>
-                          <div class="col-md-4">
-                            <p class="text-extra-small text-uppercase text-bold font-accent text-primary veil reveal-md-block veil-tablet-md">pages 1</p>
-                            <ul>
-                              <li><a href="services-1.html">Services</a></li>
-                              <li><a href="single-service.html">Single Service</a></li>
-                              <li><a href="makeup-tools.html">Makeup tools</a></li>
-                              <li><a href="masterclasses.html">Masterclasses</a></li>
-                              <li><a href="single-masterclass.html">Single Masterclass</a></li>
-                              <li><a href="maintenance.html">Maintenance (Under Construction)</a></li>
-                            </ul>
-                          </div>
-                          <div class="col-md-4">
-                            <p class="text-extra-small text-uppercase text-bold font-accent text-primary veil reveal-md-block veil-tablet-md">pages 2</p>
-                            <ul>
-                              <li><a href="404.html">404 page</a></li>
-                              <li><a href="503.html">503 page</a></li>
-                              <li><a href="coming-soon.html">Coming Soon</a></li>
-                              <li><a href="login.html">Login Page</a></li>
-                              <li><a href="register.html">Register Page</a></li>
-                              <li><a href="search-results.html">Search Results</a></li>
-                              <li><a href="site-map.html">Site Map</a></li>
-                              <li><a href="privacy.html">Privacy Policy</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                    <li lang="en"><a href="#">products</a>
+
+                          <ul class="rd-navbar-dropdown">
+                            <li><a href="vernis_a_ongles_foxy_fox.html">Nail polish Foxy-Fox</a></li>
+                            <li><a href="vernis_a_ongles_nancy.html">Nail polish Nancy</a></li>
+                            <li><a href="mascara.html">Mascara</a></li>
+                            <li><a href="glosses_a_levres_foxy_fox.html">Lip Glosses Foxy-Fox</a></li>
+                            <li><a href="fond_de_teint_compact.html">Compact foundation</a></li>
+                            <li><a href="fond_de_tein_liquide.html">Liquid foundation</a></li>
+                            <li><a href="Poudre_compacte.html">Compact powder</a></li>
+                            <li><a href="Fard_a_joues.html">blusher</a></li>
+                            <li><a href="Rouge_a_lèvres.html">Lipstick</a></li>
+                            <li><a href="Eyeliner.html">Eyeliner</a></li>
+                          </ul>
                     </li>
+
+                    <li><a href="contacts.html" >Contact</a></li>
+                     
+                        
                   </ul>
                 </div>
                         <div class="rd-navbar-collapse-wrap reveal-md-inline-block">
                           <ul class="list-inline list-inline-0 list-primary">
-                            <li class="text-center"><a href="#" class="icon icon-xxs fa fa-facebook text-white"></a></li>
-                            <li class="text-center"><a href="#" class="icon icon-xxs fa fa-google-plus text-white"></a></li>
-                            <li class="text-center"><a href="#" class="icon icon-xxs fa fa-linkedin text-white"></a></li>
-                            <li class="text-center"><a href="#" class="icon icon-xxs fa fa-twitter text-white"></a></li>
+                            <li class="text-center"><a href="https://www.facebook.com/cosmomaroc/" class="icon icon-xxs fa fa-facebook text-white"></a></li>
+                   <li class="text-center"><a href="#" hreflang="en" onclick="setLang('en'); return false"><img src="images/en.jpg" width="35"height="22" alt=""></a></li>
+                   <li class="text-center"><a href="#" hreflang="fr" onclick="setLang('fr'); return false"><img src="images/fr.png" width="35"height="22" alt=""></a></li>
+               
                           </ul>
                         </div>
               </div>
@@ -160,16 +143,10 @@
           <div data-speed="0" data-type="html" class="rd-parallax-layer">
             <div class="shell section-top-34 section-bottom-34 section-md-top-175 section-md-bottom-75 section-lg-top-158 section-lg-bottom-125 section-md-tablet-75">
               <div class="veil reveal-md-block">
-                <div class="text-extra-big font-accent text-bold text-spacing-inverse-50">Privacy Policy</div>
+                <div class="text-extra-big font-accent text-bold text-spacing-inverse-50" lang="en">Privacy Policy</div>
+                <div class="text-extra-big font-accent text-bold text-spacing-inverse-50" lang="fr">Politique de confidentialité</div>
               </div>
-              <div class="offset-top-5">
-                <ul class="list-inline list-inline-dashed h5 text-uppercase">
-                  <li><a href="index.html">home</a></li>
-                  <li><a href="#">Pages</a></li>
-                  <li>Privacy Policy
-                  </li>
-                </ul>
-              </div>
+              
             </div>
           </div>
         </section>
@@ -179,17 +156,27 @@
         <!-- Privacy Policy-->
         <section class="section-75 section-md-top-90 section-md-bottom-103">
           <div class="shell">
-            <h2>Privacy Policy</h2>
+            <h2 lang="en">Privacy Policy</h2>
+            <h2 lang="fr">Politique de confidentialité</h2>
             <div class="range range-xs-center offset-top-40">
               <div class="cell-lg-10">
                 <!-- Accordion-->
                 <div id="accordion" role="tablist" aria-multiselectable="true" class="bootstrap-accordion-alternative panel-group">
                   <div class="panel">
                     <div id="headingOne" role="tab">
-                      <p class="font-accent text-bold text-spacing-inverse-25"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="text-mine-shaft text-uppercase">General information</a></p>
+                      <p class="font-accent text-bold text-spacing-inverse-25"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="text-mine-shaft text-uppercase" lang="en">General information</a></p>
                     </div>
                     <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
-                      <div class="small">Welcome to our Privacy Policy page! When you use our web site services, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. When you share information with us, we can make our services even better for you. For instance, we can show you more relevant search results and ads, help you connect with people or to make sharing with others quicker and easier. As you use our services, we want you to be clear how we’re using information and the ways in which you can protect your privacy. This is important; we hope you will take time to read it carefully. Remember, you can find controls to manage your information and protect your privacy and security. We’ve tried to keep it as simple as possible.</div>
+                      <div class="small" lang="en">Welcome to our Privacy Policy page! When you use our web site services, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. When you share information with us, we can make our services even better for you. For instance, we can show you more relevant search results and ads, help you connect with people or to make sharing with others quicker and easier. As you use our services, we want you to be clear how we’re using information and the ways in which you can protect your privacy. This is important; we hope you will take time to read it carefully. Remember, you can find controls to manage your information and protect your privacy and security. We’ve tried to keep it as simple as possible.</div>
+                    </div>
+                  </div>
+                  <div class="panel">
+                    <div id="headingOne" role="tab">
+                      <p class="font-accent text-bold text-spacing-inverse-25"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="text-mine-shaft text-uppercase"lang
+                        ="fr">INFORMATIONS GÉNÉRALES</a></p>
+                    </div>
+                    <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                      <div class="small" lang="fr">Bienvenue sur notre page Politique de confidentialité! Lorsque vous utilisez nos services de site Web, vous nous faites confiance avec vos informations. Cette politique de confidentialité a pour but de vous aider à comprendre quelles données nous recueillons, pourquoi nous les recueillons et ce que nous en faisons. Lorsque vous partagez des informations avec nous, nous pouvons améliorer encore davantage nos services. Par exemple, nous pouvons vous montrer des résultats de recherche et des annonces plus pertinents, vous aider à nouer des contacts ou rendre le partage avec les autres plus rapide et plus simple. Lorsque vous utilisez nos services, nous souhaitons que vous sachiez clairement comment nous utilisons les informations et comment vous pouvez protéger votre vie privée. C'est important; Nous espérons que vous prendrez le temps de le lire attentivement. N'oubliez pas que vous pouvez trouver des contrôles pour gérer vos informations et protéger votre confidentialité et votre sécurité. Nous avons essayé de le garder aussi simple que possible.</div>
                     </div>
                   </div>
                   <div class="offset-top-10"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="icon-collapse text-primary"></a></div>
@@ -245,71 +232,20 @@
                   <div class="offset-top-20"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="icon-collapse text-primary"></a></div>
                   <div class="divider divider-gray"></div>
                 </div>
-                <div class="offset-top-25"><a href="mailto:#" class="font-accent text-bold text-primary text-uppercase">privacy@demolink.org</a></div>
+                <div class="offset-top-25"><a href="mailto:#" class="font-accent text-bold text-primary text-uppercase">privacy@cosmomaroc.com</a></div>
               </div>
             </div>
           </div>
         </section>
       </main>
       <!-- Page Footer-->
-      <footer class="page-footer bg-mine-shaft section-75 section-md-top-103 section-md-bottom-55 text-md-left">
+      <footer class="page-footer bg-white section-75 section-md-top-103 section-md-bottom-55 text-md-left">
         <div class="shell">
-          <div class="range range-xs-center range-lg-justify">
-            <div class="cell-sm-4 cell-md-3"><a href="index.html"><img width="207" height="30" src="images/logo-164x29.png" alt=""></a></div>
-            <div class="cell-sm-5 cell-md-3 cell-md-push-4 offset-top-20 offset-sm-top-0">
-                            <ul class="list-inline list-inline-0 list-calypso">
-                              <li class="text-center"><a href="#" class="icon icon-xxs fa fa-facebook text-color-secondary"></a></li>
-                              <li class="text-center"><a href="#" class="icon icon-xxs fa fa-google-plus text-color-secondary"></a></li>
-                              <li class="text-center"><a href="#" class="icon icon-xxs fa fa-linkedin text-color-secondary"></a></li>
-                              <li class="text-center"><a href="#" class="icon icon-xxs fa fa-twitter text-color-secondary"></a></li>
-                            </ul>
-            </div>
-            <div class="cell-sm-4 cell-md-2 cell-md-push-1 offset-top-44 offset-md-top-0">
-              <div>
-                <p class="text-uppercase text-bold font-accent text-spacing-50 text-color-secondary">about</p>
-              </div>
-              <div class="reveal-inline-block offset-top-15 offset-md-top-30">
-                <ul class="list-marked text-extra-small p text-left">
-                  <li><a href="testimonials.html" class="text-white">Why me</a></li>
-                  <li class="offset-top-10"><a href="portfolio.html" class="text-white">Specialization</a></li>
-                  <li class="offset-top-10"><a href="contacts.html" class="text-white">Locations</a></li>
-                  <li class="offset-top-10"><a href="clients.html" class="text-white">About me</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="cell-sm-4 cell-md-2 cell-md-push-2 offset-top-44 offset-md-top-0">
-              <div>
-                <p class="text-uppercase text-bold font-accent text-spacing-50 text-color-secondary">Services</p>
-              </div>
-              <div class="reveal-inline-block offset-top-15 offset-md-top-30">
-                <ul class="list-marked text-extra-small p text-left">
-                  <li><a href="single-service.html" class="text-white">Make up</a></li>
-                  <li class="offset-top-10"><a href="single-service.html" class="text-white">Haircut</a></li>
-                  <li class="offset-top-10"><a href="single-service.html" class="text-white">Face treatment</a></li>
-                  <li class="offset-top-10"><a href="single-service.html" class="text-white">Hand treatment</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="cell-sm-4 cell-md-2 cell-md-push-3 offset-top-44 offset-md-top-0">
-              <div>
-                <p class="text-uppercase text-bold font-accent text-spacing-50 text-color-secondary">shop</p>
-              </div>
-              <div class="reveal-inline-block offset-top-15 offset-md-top-30">
-                <ul class="list-marked text-extra-small p text-left">
-                  <li><a href="#.html" class="text-white">Delivery</a></li>
-                  <li class="offset-top-10"><a href="#.html" class="text-white">Returns</a></li>
-                  <li class="offset-top-10"><a href="#.html" class="text-white">Terms & Conditions</a></li>
-                  <li class="offset-top-10"><a href="faq.html" class="text-white">FAQs</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="offset-top-60">
-            <div class="hr bg-white-opacity23"></div>
-          </div>
-          <div class="offset-top-50 privacy">
-            <p class="text-extra-small text-white"><span class="footer-brand text-primary">Jessica Priston</span> &#169; <span id="copyright-year"></span> <a href="privacy.html" class="text-white">Privacy Policy</a></p>
-          </div>
+         
+         
+         <p class="text-extra-small text-silver-chalice"><span class="font-accent footer-brand text-bold">Cosmomaroc</span> &#169; <span id="copyright-year"></span> <a href="privacy.html"
+                class="text-silver-chalice" lang="fr">Confidentialité</a><a href="privacy.html"
+                class="text-silver-chalice" lang="en">Privacy Policy</a></p>
         </div>
       </footer>
     </div>
