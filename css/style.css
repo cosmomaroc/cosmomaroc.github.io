@@ -42031,3 +42031,19 @@ a.pswp__share--download:hover {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.zoomBOut {
+  overflow: hidden;
+  position: relative;
+}
+.zoomBIn {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: transform ease 0.3s;
+}
+.zoomBIn:hover {
+  transform: scale(1.8);
+}
